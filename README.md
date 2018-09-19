@@ -1,5 +1,5 @@
-# A.C
+# Semestre 2018-2019 "A"
 # Códigos de Arquitectura de Computadoras 
 # Elaborados por:
-#                 Joaquín Domínguez
-#                 Carlos Ochoa
+#                 Joaquín Domínguez Moran
+#                 Carlos Armando Ochoa Ginera
