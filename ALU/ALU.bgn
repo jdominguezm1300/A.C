@@ -1,14 +1,19 @@
-Release 14.7 - Bitgen P.20160913 (lin64)
+Release 14.7 - Bitgen P.20131013 (nt)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
-Loading device for application Rf_Device from file '6slx4.nph' in environment
-/opt/Xilinx/14.7/ISE_DS/ISE/.
-   "ALU" is an NCD, version 3.2, device xc6slx4, package csg225, speed -2
+Loading device for application Rf_Device from file '7a100t.nph' in environment
+C:\Xilinx\14.7\ISE_DS\ISE\.
+   "ALU" is an NCD, version 3.2, device xc7a100t, package csg324, speed -2
 Opened constraints file ALU.pcf.
 
-Tue Sep  4 06:26:44 2018
+Wed Sep 19 11:20:24 2018
 
-/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/bitgen -intstyle ise -w -g DebugBitstream:No -g Binary:no -g CRC:Enable -g Reset_on_err:No -g ConfigRate:2 -g ProgPin:PullUp -g TckPin:PullUp -g TdiPin:PullUp -g TdoPin:PullUp -g TmsPin:PullUp -g UnusedPin:PullDown -g UserID:0xFFFFFFFF -g ExtMasterCclk_en:No -g SPI_buswidth:1 -g TIMER_CFG:0xFFFF -g multipin_wakeup:No -g StartUpClk:CClk -g DONE_cycle:4 -g GTS_cycle:5 -g GWE_cycle:6 -g LCK_cycle:NoWait -g Security:None -g DonePipe:No -g DriveDone:No -g en_sw_gsr:No -g drive_awake:No -g sw_clk:Startupclk -g sw_gwe_cycle:5 -g sw_gts_cycle:4 ALU.ncd 
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt\unwrapped\bitgen.exe -intstyle ise -w -g DebugBitstream:No -g Binary:no -g CRC:Enable -g ConfigRate:3 -g CclkPin:PullUp -g M0Pin:PullUp -g M1Pin:PullUp -g M2Pin:PullUp -g ProgPin:PullUp -g InitPin:Pullup -g TckPin:PullUp -g TdiPin:PullUp -g TdoPin:PullUp -g TmsPin:PullUp -g Disable_JTAG:No -g UnusedPin:PullDown -g UserID:0xFFFFFFFF -g ExtMasterCclk_en:Disable -g ConfigFallback:Disable -g BPI_page_size:1 -g BPI_sync_mode:Disable -g SPI_32bit_addr:No -g SPI_buswidth:1 -g SPI_Fall_Edge:No -g OverTempPowerDown:Disable -g USR_ACCESS:None -g JTAG_XADC:Enable -g DCIUpdateMode:AsRequired -g StartUpClk:CClk -g DONE_cycle:4 -g GTS_cycle:5 -g GWE_cycle:6 -g Match_cycle:Auto -g Security:None -g ICAP_select:Auto -g DonePipe:Yes -g Encrypt:No ALU.ncd 
 
+INFO:Bitgen:40 - Replacing "Auto" with "NoWait" for option "Match_cycle".  Most
+   commonly, bitgen has determined and will use a specific value instead of the
+   generic command-line value of "Auto".  Alternately, this message appears if
+   the same option is specified multiple times on the command-line.  In this
+   case, the option listed last will be used.
 Summary of Bitgen Options:
 +----------------------+----------------------+
 | Option Name          | Current Setting      |
@@ -21,13 +26,23 @@ Summary of Bitgen Options:
 +----------------------+----------------------+
 | DebugBitstream       | No**                 |
 +----------------------+----------------------+
-| ConfigRate           | 2**                  |
+| ConfigRate           | 3**                  |
 +----------------------+----------------------+
 | StartupClk           | Cclk**               |
 +----------------------+----------------------+
+| CclkPin              | Pullup**             |
++----------------------+----------------------+
 | DonePin              | Pullup*              |
 +----------------------+----------------------+
+| M0Pin                | Pullup**             |
++----------------------+----------------------+
+| M1Pin                | Pullup**             |
++----------------------+----------------------+
+| M2Pin                | Pullup**             |
++----------------------+----------------------+
 | ProgPin              | Pullup**             |
++----------------------+----------------------+
+| InitPin              | Pullup**             |
 +----------------------+----------------------+
 | TckPin               | Pullup**             |
 +----------------------+----------------------+
@@ -43,15 +58,17 @@ Summary of Bitgen Options:
 +----------------------+----------------------+
 | GTS_cycle            | 5**                  |
 +----------------------+----------------------+
-| LCK_cycle            | NoWait**             |
+| OverTempPowerDown    | Disable**            |
++----------------------+----------------------+
+| LCK_cycle            | NoWait*              |
++----------------------+----------------------+
+| Match_cycle          | NoWait               |
 +----------------------+----------------------+
 | DONE_cycle           | 4**                  |
 +----------------------+----------------------+
 | Persist              | No*                  |
 +----------------------+----------------------+
-| DriveDone            | No**                 |
-+----------------------+----------------------+
-| DonePipe             | No**                 |
+| DonePipe             | Yes**                |
 +----------------------+----------------------+
 | Security             | None**               |
 +----------------------+----------------------+
@@ -59,61 +76,67 @@ Summary of Bitgen Options:
 +----------------------+----------------------+
 | ActiveReconfig       | No*                  |
 +----------------------+----------------------+
-| Partial              | (Not Specified)*     |
+| Encrypt              | No**                 |
 +----------------------+----------------------+
-| Encrypt              | No*                  |
+| EncryptKeySelect     | bbram*               |
 +----------------------+----------------------+
 | Key0                 | pick*                |
 +----------------------+----------------------+
 | StartCBC             | pick*                |
 +----------------------+----------------------+
+| HKey                 | pick*                |
++----------------------+----------------------+
 | KeyFile              | (Not Specified)*     |
 +----------------------+----------------------+
-| drive_awake          | No**                 |
+| DCIUpdateMode        | AsRequired**         |
 +----------------------+----------------------+
-| Reset_on_err         | No**                 |
+| ICAP_Select          | Auto**               |
 +----------------------+----------------------+
-| suspend_filter       | Yes*                 |
+| ConfigFallback       | Disable**            |
 +----------------------+----------------------+
-| en_sw_gsr            | No**                 |
+| SelectMAPAbort       | Enable*              |
 +----------------------+----------------------+
-| en_suspend           | No*                  |
+| BPI_page_size        | 1**                  |
 +----------------------+----------------------+
-| sw_clk               | Startupclk**         |
+| BPI_1st_read_cycle   | 1*                   |
 +----------------------+----------------------+
-| sw_gwe_cycle         | 5**                  |
-+----------------------+----------------------+
-| sw_gts_cycle         | 4**                  |
-+----------------------+----------------------+
-| multipin_wakeup      | No**                 |
-+----------------------+----------------------+
-| wakeup_mask          | 0x00*                |
-+----------------------+----------------------+
-| ExtMasterCclk_en     | No**                 |
-+----------------------+----------------------+
-| ExtMasterCclk_divide | 1*                   |
-+----------------------+----------------------+
-| CrcCoverage          | No*                  |
-+----------------------+----------------------+
-| glutmask             | Yes*                 |
-+----------------------+----------------------+
-| next_config_addr     | 0x00000000*          |
-+----------------------+----------------------+
-| next_config_new_mode | No*                  |
-+----------------------+----------------------+
-| next_config_boot_mode | 001*                 |
-+----------------------+----------------------+
-| next_config_register_write | Enable*              |
+| next_config_addr     | None*                |
 +----------------------+----------------------+
 | next_config_reboot   | Enable*              |
 +----------------------+----------------------+
-| golden_config_addr   | 0x00000000*          |
+| InitSignalsError     | Enable*              |
 +----------------------+----------------------+
-| failsafe_user        | 0x0000*              |
+| XADCPartialReconfig  | Disable*             |
 +----------------------+----------------------+
-| TIMER_CFG            | 0xFFFF               |
+| XADCEnhancedLinearity | Off*                 |
 +----------------------+----------------------+
-| spi_buswidth         | 1**                  |
+| JTAG_XADC            | Enable**             |
++----------------------+----------------------+
+| Disable_JTAG         | No**                 |
++----------------------+----------------------+
+| XADCPowerDown        | Disable*             |
++----------------------+----------------------+
+| Partial              | (Not Specified)*     |
++----------------------+----------------------+
+| ExtMasterCclk_en     | Disable**            |
++----------------------+----------------------+
+| BPI_sync_mode        | Disable**            |
++----------------------+----------------------+
+| SPI_32bit_addr       | No**                 |
++----------------------+----------------------+
+| SPI_buswidth         | 1**                  |
++----------------------+----------------------+
+| SPI_Fall_Edge        | No**                 |
++----------------------+----------------------+
+| RevisionSelect       | 00*                  |
++----------------------+----------------------+
+| RevisionSelect_tristate | Disable*             |
++----------------------+----------------------+
+| TIMER_CFG            | None*                |
++----------------------+----------------------+
+| TIMER_USR            | None*                |
++----------------------+----------------------+
+| USR_ACCESS           | None**               |
 +----------------------+----------------------+
 | TimeStamp            | Default*             |
 +----------------------+----------------------+
@@ -128,7 +151,11 @@ There were 0 CONFIG constraint(s) processed from ALU.pcf.
 
 
 Running DRC.
-DRC detected 0 errors and 0 warnings.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net ALUOP[1]_PWR_5_o_Mux_31_o
+   is sourced by a combinatorial pin. This is not good design practice. Use the
+   CE pin to control the loading of data into the flip-flop.
+DRC detected 0 errors and 1 warnings.  Please see the previously displayed
+individual error or warning messages for more details.
 Creating bit map...
-Saving bit stream in "ALU.bit".
+Saving bit stream in "alu.bit".
 Bitstream generation is complete.

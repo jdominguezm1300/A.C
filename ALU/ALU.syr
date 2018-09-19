@@ -1,21 +1,18 @@
-Release 14.7 - xst P.20160913 (lin64)
+Release 14.7 - xst P.20131013 (nt)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
---> 
-Parameter TMPDIR set to xst/projnav.tmp
+--> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.03 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.61 secs
  
---> 
-Parameter xsthdpdir set to xst
+--> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.03 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.61 secs
  
---> 
-Reading design: ALU.prj
+--> Reading design: ALU.prj
 
 TABLE OF CONTENTS
   1) Synthesis Options Summary
@@ -49,7 +46,7 @@ Ignore Synthesis Constraint File   : NO
 ---- Target Parameters
 Output File Name                   : "ALU"
 Output Format                      : NGC
-Target Device                      : xc6slx4-2-csg225
+Target Device                      : xc7a100t-2-csg324
 
 ---- Source Options
 Top Module Name                    : ALU
@@ -73,7 +70,7 @@ LUT Combining                      : Auto
 Reduce Control Sets                : Auto
 Add IO Buffers                     : YES
 Global Maximum Fanout              : 100000
-Add Generic Clock Buffer(BUFG)     : 16
+Add Generic Clock Buffer(BUFG)     : 32
 Register Duplication               : YES
 Optimize Instantiated Primitives   : NO
 Use Clock Enable                   : Auto
@@ -108,7 +105,7 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "/home/ise/Documents/ALU/adderReceier.vhd" into library work
+Parsing VHDL file "C:\Documents and Settings\Laboratorio\Escritorio\alu\ALU\ALU.vhd" into library work
 Parsing entity <ALU>.
 Parsing architecture <Behavioral> of entity <alu>.
 
@@ -117,24 +114,45 @@ Parsing architecture <Behavioral> of entity <alu>.
 =========================================================================
 
 Elaborating entity <ALU> (architecture <Behavioral>) with generics from library <work>.
-WARNING:HDLCompiler:746 - "/home/ise/Documents/ALU/adderReceier.vhd" Line 54: Range is empty (null range)
+WARNING:HDLCompiler:746 - "C:\Documents and Settings\Laboratorio\Escritorio\alu\ALU\ALU.vhd" Line 73: Range is empty (null range)
 
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <ALU>.
-    Related source file is "/home/ise/Documents/ALU/adderReceier.vhd".
+    Related source file is "C:\Documents and Settings\Laboratorio\Escritorio\alu\ALU\ALU.vhd".
         N = 4
+    Found 1-bit 4-to-1 multiplexer for signal <RES<0>> created at line 60.
+    Found 1-bit 4-to-1 multiplexer for signal <RES<1>> created at line 60.
+    Found 1-bit 4-to-1 multiplexer for signal <RES<2>> created at line 60.
+    Found 1-bit 4-to-1 multiplexer for signal <FLAG<2>> created at line 60.
+WARNING:Xst:737 - Found 1-bit latch for signal <C<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <C<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <C<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <P<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <P<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <P<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <G<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <G<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <G<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <C<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
     Summary:
+	inferred  10 Latch(s).
+	inferred  21 Multiplexer(s).
 Unit <ALU> synthesized.
 
 =========================================================================
 HDL Synthesis Report
 
 Macro Statistics
-# Xors                                                 : 12
- 1-bit xor2                                            : 12
+# Latches                                              : 10
+ 1-bit latch                                           : 10
+# Multiplexers                                         : 21
+ 1-bit 2-to-1 multiplexer                              : 17
+ 1-bit 4-to-1 multiplexer                              : 4
+# Xors                                                 : 23
+ 1-bit xor2                                            : 23
 
 =========================================================================
 
@@ -147,16 +165,29 @@ Macro Statistics
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Xors                                                 : 12
- 1-bit xor2                                            : 12
+# Multiplexers                                         : 21
+ 1-bit 2-to-1 multiplexer                              : 17
+ 1-bit 4-to-1 multiplexer                              : 4
+# Xors                                                 : 23
+ 1-bit xor2                                            : 23
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+WARNING:Xst:2677 - Node <C_4> of sequential type is unconnected in block <ALU>.
 
 Optimizing unit <ALU> ...
+WARNING:Xst:2677 - Node <G_0> of sequential type is unconnected in block <ALU>.
+WARNING:Xst:2677 - Node <G_1> of sequential type is unconnected in block <ALU>.
+WARNING:Xst:2677 - Node <G_2> of sequential type is unconnected in block <ALU>.
+WARNING:Xst:2677 - Node <C_3> of sequential type is unconnected in block <ALU>.
+WARNING:Xst:2677 - Node <C_2> of sequential type is unconnected in block <ALU>.
+WARNING:Xst:2677 - Node <C_1> of sequential type is unconnected in block <ALU>.
+WARNING:Xst:2677 - Node <P_2> of sequential type is unconnected in block <ALU>.
+WARNING:Xst:2677 - Node <P_1> of sequential type is unconnected in block <ALU>.
+WARNING:Xst:2677 - Node <P_0> of sequential type is unconnected in block <ALU>.
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -189,35 +220,40 @@ Top Level Output File Name         : ALU.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 6
-#      LUT2                        : 1
+# BELS                             : 33
+#      LUT2                        : 4
+#      LUT3                        : 8
 #      LUT4                        : 1
-#      LUT5                        : 2
-#      LUT6                        : 2
-# IO Buffers                       : 14
-#      IBUF                        : 9
-#      OBUF                        : 5
+#      LUT5                        : 3
+#      LUT6                        : 16
+#      MUXF7                       : 1
+# FlipFlops/Latches                : 9
+#      LD                          : 9
+# IO Buffers                       : 20
+#      IBUF                        : 12
+#      OBUF                        : 8
 
 Device utilization summary:
 ---------------------------
 
-Selected Device : 6slx4csg225-2 
+Selected Device : 7a100tcsg324-2 
 
 
 Slice Logic Utilization: 
- Number of Slice LUTs:                    6  out of   2400     0%  
-    Number used as Logic:                 6  out of   2400     0%  
+ Number of Slice Registers:               9  out of  126800     0%  
+ Number of Slice LUTs:                   32  out of  63400     0%  
+    Number used as Logic:                32  out of  63400     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:      6
-   Number with an unused Flip Flop:       6  out of      6   100%  
-   Number with an unused LUT:             0  out of      6     0%  
-   Number of fully used LUT-FF pairs:     0  out of      6     0%  
-   Number of unique control sets:         0
+ Number of LUT Flip Flop pairs used:     33
+   Number with an unused Flip Flop:      24  out of     33    72%  
+   Number with an unused LUT:             1  out of     33     3%  
+   Number of fully used LUT-FF pairs:     8  out of     33    24%  
+   Number of unique control sets:         1
 
 IO Utilization: 
- Number of IOs:                          14
- Number of bonded IOBs:                  14  out of    132    10%  
+ Number of IOs:                          20
+ Number of bonded IOBs:                  20  out of    210     9%  
 
 Specific Feature Utilization:
 
@@ -239,7 +275,15 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
-No clock signals found in this design
+----------------------------------------------------------+------------------------+-------+
+Clock Signal                                              | Clock buffer(FF name)  | Load  |
+----------------------------------------------------------+------------------------+-------+
+ALUOP[1]_PWR_5_o_Mux_31_o(ALUOP[1]_PWR_5_o_Mux_31_o<1>1:O)| NONE(*)(G_0)           | 9     |
+----------------------------------------------------------+------------------------+-------+
+(*) This 1 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
 ----------------------------------------
@@ -249,52 +293,132 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: No path found
-   Minimum input arrival time before clock: No path found
-   Maximum output required time after clock: No path found
-   Maximum combinational path delay: 7.570ns
+   Minimum period: 1.699ns (Maximum Frequency: 588.512MHz)
+   Minimum input arrival time before clock: 2.349ns
+   Maximum output required time after clock: 4.026ns
+   Maximum combinational path delay: 4.389ns
 
 Timing Details:
 ---------------
 All values displayed in nanoseconds (ns)
 
 =========================================================================
-Timing constraint: Default path analysis
-  Total number of paths / destination ports: 35 / 5
+Timing constraint: Default period analysis for Clock 'ALUOP[1]_PWR_5_o_Mux_31_o'
+  Clock period: 1.699ns (frequency: 588.512MHz)
+  Total number of paths / destination ports: 7 / 2
 -------------------------------------------------------------------------
-Delay:               7.570ns (Levels of Logic = 4)
-  Source:            BINVERT (PAD)
-  Destination:       S<3> (PAD)
+Delay:               1.699ns (Levels of Logic = 2)
+  Source:            G_1 (LATCH)
+  Destination:       C_3 (LATCH)
+  Source Clock:      ALUOP[1]_PWR_5_o_Mux_31_o falling
+  Destination Clock: ALUOP[1]_PWR_5_o_Mux_31_o falling
 
-  Data Path: BINVERT to S<3>
+  Data Path: G_1 to C_3
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             5   1.328   1.271  BINVERT_IBUF (BINVERT_IBUF)
-     LUT5:I0->O            3   0.254   0.874  C<2>1 (C<2>)
-     LUT6:I4->O            1   0.250   0.681  CN1 (CN_OBUF)
-     OBUF:I->O                 2.912          CN_OBUF (CN)
+     LD:G->Q               3   0.521   0.369  G_1 (G_1)
+     LUT6:I5->O            1   0.105   0.599  A[3]_ALUOP[2]_OR_23_o11_SW0 (N4)
+     LUT6:I3->O            2   0.105   0.000  A[2]_ALUOP[2]_OR_15_o1 (A[2]_ALUOP[2]_OR_15_o)
+     LD:D                     -0.015          C_3
     ----------------------------------------
-    Total                      7.570ns (4.744ns logic, 2.826ns route)
-                                       (62.7% logic, 37.3% route)
+    Total                      1.699ns (0.731ns logic, 0.968ns route)
+                                       (43.0% logic, 57.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'ALUOP[1]_PWR_5_o_Mux_31_o'
+  Total number of paths / destination ports: 60 / 9
+-------------------------------------------------------------------------
+Offset:              2.349ns (Levels of Logic = 4)
+  Source:            ALUOP<1> (PAD)
+  Destination:       C_2 (LATCH)
+  Destination Clock: ALUOP[1]_PWR_5_o_Mux_31_o falling
+
+  Data Path: ALUOP<1> to C_2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            12   0.001   0.512  ALUOP_1_IBUF (ALUOP_1_IBUF)
+     LUT2:I0->O           15   0.105   0.871  ALUOP[1]_PWR_5_o_Mux_31_o<1>1 (ALUOP[1]_PWR_5_o_Mux_31_o)
+     LUT6:I0->O            1   0.105   0.649  A[1]_ALUOP[2]_OR_8_o11_SW0 (N7)
+     LUT5:I1->O            2   0.105   0.000  A[1]_ALUOP[2]_OR_8_o2 (A[1]_ALUOP[2]_OR_8_o)
+     LD:D                     -0.015          C_2
+    ----------------------------------------
+    Total                      2.349ns (0.316ns logic, 2.033ns route)
+                                       (13.5% logic, 86.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'ALUOP[1]_PWR_5_o_Mux_31_o'
+  Total number of paths / destination ports: 50 / 7
+-------------------------------------------------------------------------
+Offset:              4.026ns (Levels of Logic = 6)
+  Source:            G_1 (LATCH)
+  Destination:       FLAG<1> (PAD)
+  Source Clock:      ALUOP[1]_PWR_5_o_Mux_31_o falling
+
+  Data Path: G_1 to FLAG<1>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               3   0.521   0.369  G_1 (G_1)
+     LUT6:I5->O            1   0.105   0.599  A[3]_ALUOP[2]_OR_23_o11_SW0 (N4)
+     LUT6:I3->O            2   0.105   0.654  A[2]_ALUOP[2]_OR_15_o1 (A[2]_ALUOP[2]_OR_15_o)
+     LUT6:I2->O            1   0.105   0.357  Mmux_FLAG<2>11 (Mmux_FLAG<2>1)
+     LUT6:I5->O            3   0.105   0.661  Mmux_FLAG<2>12 (FLAG_2_OBUF)
+     LUT4:I0->O            1   0.105   0.339  FLAG<1>1 (FLAG_1_OBUF)
+     OBUF:I->O                 0.000          FLAG_1_OBUF (FLAG<1>)
+    ----------------------------------------
+    Total                      4.026ns (1.046ns logic, 2.980ns route)
+                                       (26.0% logic, 74.0% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 270 / 8
+-------------------------------------------------------------------------
+Delay:               4.389ns (Levels of Logic = 8)
+  Source:            ALUOP<1> (PAD)
+  Destination:       FLAG<1> (PAD)
+
+  Data Path: ALUOP<1> to FLAG<1>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            12   0.001   0.512  ALUOP_1_IBUF (ALUOP_1_IBUF)
+     LUT2:I0->O           15   0.105   0.871  ALUOP[1]_PWR_5_o_Mux_31_o<1>1 (ALUOP[1]_PWR_5_o_Mux_31_o)
+     LUT6:I0->O            2   0.105   0.362  A[1]_ALUOP[2]_OR_8_o11 (A[1]_ALUOP[2]_OR_8_o1)
+     LUT6:I5->O            2   0.105   0.654  A[2]_ALUOP[2]_OR_15_o1 (A[2]_ALUOP[2]_OR_15_o)
+     LUT6:I2->O            1   0.105   0.357  Mmux_FLAG<2>11 (Mmux_FLAG<2>1)
+     LUT6:I5->O            3   0.105   0.661  Mmux_FLAG<2>12 (FLAG_2_OBUF)
+     LUT4:I0->O            1   0.105   0.339  FLAG<1>1 (FLAG_1_OBUF)
+     OBUF:I->O                 0.000          FLAG_1_OBUF (FLAG<1>)
+    ----------------------------------------
+    Total                      4.389ns (0.631ns logic, 3.758ns route)
+                                       (14.4% logic, 85.6% route)
 
 =========================================================================
 
 Cross Clock Domains Report:
 --------------------------
 
+Clock to Setup on destination clock ALUOP[1]_PWR_5_o_Mux_31_o
+-------------------------+---------+---------+---------+---------+
+                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock             |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------------+---------+---------+---------+---------+
+ALUOP[1]_PWR_5_o_Mux_31_o|         |         |    1.699|         |
+-------------------------+---------+---------+---------+---------+
+
 =========================================================================
 
 
-Total REAL time to Xst completion: 7.00 secs
-Total CPU time to Xst completion: 5.77 secs
+Total REAL time to Xst completion: 18.00 secs
+Total CPU time to Xst completion: 17.83 secs
  
 --> 
 
-
-Total memory usage is 473228 kilobytes
+Total memory usage is 265760 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    1 (   0 filtered)
-Number of infos    :    0 (   0 filtered)
+Number of warnings :   21 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
 

@@ -1,8 +1,8 @@
 INTSTYLE=ise
-INFILE=/home/ise/Documents/ALU/ALU.ncd
-OUTFILE=/home/ise/Documents/ALU/ALU.bit
-FAMILY=Spartan6
-PART=xc6slx4-2csg225
-WORKINGDIR=/home/ise/Documents/ALU
+INFILE=C:\Documents and Settings\Laboratorio\Escritorio\alu\ALU\ALU.ncd
+OUTFILE=C:\Documents and Settings\Laboratorio\Escritorio\alu\ALU\ALU.bit
+FAMILY=Artix7
+PART=xc7a100t-2csg324
+WORKINGDIR=C:\Documents and Settings\Laboratorio\Escritorio\alu\ALU
 LICENSE=WebPack
-USER_INFO=8416_11442_1478797146_620
+USER_INFO=__0_0_0

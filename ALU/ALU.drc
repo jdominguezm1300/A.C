@@ -1,8 +1,12 @@
-Release 14.7 Drc P.20160913 (lin64)
+Release 14.7 Drc P.20131013 (nt)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Tue Sep  4 06:26:44 2018
+Wed Sep 19 11:20:24 2018
 
 drc -z ALU.ncd ALU.pcf
 
-DRC detected 0 errors and 0 warnings.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net ALUOP[1]_PWR_5_o_Mux_31_o
+   is sourced by a combinatorial pin. This is not good design practice. Use the
+   CE pin to control the loading of data into the flip-flop.
+DRC detected 0 errors and 1 warnings.  Please see the previously displayed
+individual error or warning messages for more details.

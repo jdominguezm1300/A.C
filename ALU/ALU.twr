@@ -1,13 +1,13 @@
 --------------------------------------------------------------------------------
-Release 14.7 Trace  (lin64)
+Release 14.7 Trace  (nt)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/trce -intstyle ise -v 3 -s 2 -n
-3 -fastpaths -xml ALU.twx ALU.ncd -o ALU.twr ALU.pcf
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt\unwrapped\trce.exe -intstyle ise -v 3 -s 2 -n
+3 -fastpaths -xml ALU.twx ALU.ncd -o ALU.twr ALU.pcf -ucf ports.ucf
 
 Design file:              ALU.ncd
 Physical constraint file: ALU.pcf
-Device,package,speed:     xc6slx4,csg225,C,-2 (PRODUCTION 1.23 2016-11-22)
+Device,package,speed:     xc7a100t,csg324,C,-2 (PRODUCTION 1.10 2013-10-13)
 Report level:             verbose report
 
 Environment Variable      Effect 
@@ -31,53 +31,177 @@ Data Sheet report:
 -----------------
 All values displayed in nanoseconds (ns)
 
+Setup/Hold to clock ALUOP<0>
+------------+------------+------------+------------+------------+-------------------------+--------+
+            |Max Setup to|  Process   |Max Hold to |  Process   |                         | Clock  |
+Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s)        | Phase  |
+------------+------------+------------+------------+------------+-------------------------+--------+
+A<0>        |    2.064(F)|      SLOW  |    0.345(F)|      SLOW  |ALUOP[1]_PWR_5_o_Mux_31_o|   0.000|
+A<1>        |    0.864(F)|      SLOW  |    1.387(F)|      SLOW  |ALUOP[1]_PWR_5_o_Mux_31_o|   0.000|
+A<2>        |   -0.050(F)|      FAST  |    2.545(F)|      SLOW  |ALUOP[1]_PWR_5_o_Mux_31_o|   0.000|
+ALUOP<2>    |    1.085(F)|      SLOW  |    2.882(F)|      SLOW  |ALUOP[1]_PWR_5_o_Mux_31_o|   0.000|
+B<0>        |    0.983(F)|      SLOW  |    1.636(F)|      SLOW  |ALUOP[1]_PWR_5_o_Mux_31_o|   0.000|
+B<1>        |    1.802(F)|      SLOW  |    1.299(F)|      SLOW  |ALUOP[1]_PWR_5_o_Mux_31_o|   0.000|
+B<2>        |   -0.327(F)|      FAST  |    2.796(F)|      SLOW  |ALUOP[1]_PWR_5_o_Mux_31_o|   0.000|
+------------+------------+------------+------------+------------+-------------------------+--------+
+
+Setup/Hold to clock ALUOP<1>
+------------+------------+------------+------------+------------+-------------------------+--------+
+            |Max Setup to|  Process   |Max Hold to |  Process   |                         | Clock  |
+Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s)        | Phase  |
+------------+------------+------------+------------+------------+-------------------------+--------+
+A<0>        |    2.167(F)|      SLOW  |    0.249(F)|      FAST  |ALUOP[1]_PWR_5_o_Mux_31_o|   0.000|
+A<1>        |    0.967(F)|      SLOW  |    1.280(F)|      SLOW  |ALUOP[1]_PWR_5_o_Mux_31_o|   0.000|
+A<2>        |    0.005(F)|      FAST  |    2.438(F)|      SLOW  |ALUOP[1]_PWR_5_o_Mux_31_o|   0.000|
+ALUOP<2>    |    1.188(F)|      SLOW  |    2.775(F)|      SLOW  |ALUOP[1]_PWR_5_o_Mux_31_o|   0.000|
+B<0>        |    1.086(F)|      SLOW  |    1.529(F)|      SLOW  |ALUOP[1]_PWR_5_o_Mux_31_o|   0.000|
+B<1>        |    1.905(F)|      SLOW  |    1.192(F)|      SLOW  |ALUOP[1]_PWR_5_o_Mux_31_o|   0.000|
+B<2>        |   -0.272(F)|      FAST  |    2.689(F)|      SLOW  |ALUOP[1]_PWR_5_o_Mux_31_o|   0.000|
+------------+------------+------------+------------+------------+-------------------------+--------+
+
+Clock ALUOP<0> to Pad
+------------+-----------------+------------+-----------------+------------+-------------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                         | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s)        | Phase  |
+------------+-----------------+------------+-----------------+------------+-------------------------+--------+
+FLAG<0>     |        13.554(F)|      SLOW  |         4.244(F)|      FAST  |ALUOP[1]_PWR_5_o_Mux_31_o|   0.000|
+FLAG<1>     |        13.206(F)|      SLOW  |         4.589(F)|      FAST  |ALUOP[1]_PWR_5_o_Mux_31_o|   0.000|
+FLAG<2>     |        12.721(F)|      SLOW  |         4.420(F)|      FAST  |ALUOP[1]_PWR_5_o_Mux_31_o|   0.000|
+FLAG<3>     |        13.982(F)|      SLOW  |         4.195(F)|      FAST  |ALUOP[1]_PWR_5_o_Mux_31_o|   0.000|
+RESULT<1>   |        11.957(F)|      SLOW  |         4.622(F)|      FAST  |ALUOP[1]_PWR_5_o_Mux_31_o|   0.000|
+RESULT<2>   |        12.971(F)|      SLOW  |         4.862(F)|      FAST  |ALUOP[1]_PWR_5_o_Mux_31_o|   0.000|
+RESULT<3>   |        12.870(F)|      SLOW  |         4.456(F)|      FAST  |ALUOP[1]_PWR_5_o_Mux_31_o|   0.000|
+------------+-----------------+------------+-----------------+------------+-------------------------+--------+
+
+Clock ALUOP<1> to Pad
+------------+-----------------+------------+-----------------+------------+-------------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                         | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s)        | Phase  |
+------------+-----------------+------------+-----------------+------------+-------------------------+--------+
+FLAG<0>     |        13.447(F)|      SLOW  |         4.189(F)|      FAST  |ALUOP[1]_PWR_5_o_Mux_31_o|   0.000|
+FLAG<1>     |        13.099(F)|      SLOW  |         4.534(F)|      FAST  |ALUOP[1]_PWR_5_o_Mux_31_o|   0.000|
+FLAG<2>     |        12.614(F)|      SLOW  |         4.365(F)|      FAST  |ALUOP[1]_PWR_5_o_Mux_31_o|   0.000|
+FLAG<3>     |        13.875(F)|      SLOW  |         4.140(F)|      FAST  |ALUOP[1]_PWR_5_o_Mux_31_o|   0.000|
+RESULT<1>   |        11.850(F)|      SLOW  |         4.567(F)|      FAST  |ALUOP[1]_PWR_5_o_Mux_31_o|   0.000|
+RESULT<2>   |        12.864(F)|      SLOW  |         4.807(F)|      FAST  |ALUOP[1]_PWR_5_o_Mux_31_o|   0.000|
+RESULT<3>   |        12.763(F)|      SLOW  |         4.401(F)|      FAST  |ALUOP[1]_PWR_5_o_Mux_31_o|   0.000|
+------------+-----------------+------------+-----------------+------------+-------------------------+--------+
+
+Clock to Setup on destination clock ALUOP<0>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+ALUOP<0>       |         |         |    2.142|    2.142|
+ALUOP<1>       |         |         |    2.035|    2.035|
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock ALUOP<1>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+ALUOP<0>       |         |         |    2.245|    2.245|
+ALUOP<1>       |         |         |    2.138|    2.138|
+---------------+---------+---------+---------+---------+
+
 Pad to Pad
 ---------------+---------------+---------+
 Source Pad     |Destination Pad|  Delay  |
 ---------------+---------------+---------+
-A<0>           |CN             |   10.109|
-A<0>           |S<0>           |    8.856|
-A<0>           |S<1>           |    8.935|
-A<0>           |S<2>           |    9.743|
-A<0>           |S<3>           |   10.041|
-A<1>           |CN             |    9.970|
-A<1>           |S<1>           |    8.796|
-A<1>           |S<2>           |    9.604|
-A<1>           |S<3>           |    9.902|
-A<2>           |CN             |    8.654|
-A<2>           |S<2>           |    8.719|
-A<2>           |S<3>           |    8.880|
-A<3>           |CN             |    8.604|
-A<3>           |S<3>           |    8.397|
-B<0>           |CN             |   10.914|
-B<0>           |S<0>           |    8.893|
-B<0>           |S<1>           |    9.740|
-B<0>           |S<2>           |   10.548|
-B<0>           |S<3>           |   10.846|
-B<1>           |CN             |   10.484|
-B<1>           |S<1>           |    9.310|
-B<1>           |S<2>           |   10.118|
-B<1>           |S<3>           |   10.416|
-B<2>           |CN             |    8.709|
-B<2>           |S<2>           |    9.039|
-B<2>           |S<3>           |    9.171|
-B<3>           |CN             |    8.093|
-B<3>           |S<3>           |    9.031|
-BINVERT        |CN             |   10.505|
-BINVERT        |S<1>           |    9.331|
-BINVERT        |S<2>           |   10.139|
-BINVERT        |S<3>           |   10.437|
+A<0>           |FLAG<0>        |   12.872|
+A<0>           |FLAG<1>        |   13.312|
+A<0>           |FLAG<2>        |   12.334|
+A<0>           |FLAG<3>        |   13.300|
+A<0>           |RESULT<0>      |   11.332|
+A<0>           |RESULT<1>      |   12.135|
+A<0>           |RESULT<2>      |   13.360|
+A<0>           |RESULT<3>      |   12.483|
+A<1>           |FLAG<0>        |   10.279|
+A<1>           |FLAG<1>        |   12.201|
+A<1>           |FLAG<2>        |   10.587|
+A<1>           |FLAG<3>        |   10.707|
+A<1>           |RESULT<1>      |   10.437|
+A<1>           |RESULT<2>      |   12.249|
+A<1>           |RESULT<3>      |   10.736|
+A<2>           |FLAG<0>        |    9.338|
+A<2>           |FLAG<1>        |   11.139|
+A<2>           |FLAG<2>        |   10.302|
+A<2>           |FLAG<3>        |    9.766|
+A<2>           |RESULT<2>      |   11.187|
+A<2>           |RESULT<3>      |   10.451|
+A<3>           |FLAG<0>        |    9.075|
+A<3>           |FLAG<1>        |   10.161|
+A<3>           |FLAG<2>        |    9.676|
+A<3>           |FLAG<3>        |    9.503|
+A<3>           |RESULT<3>      |    9.825|
+ALUOP<0>       |FLAG<0>        |   12.260|
+ALUOP<0>       |FLAG<1>        |   13.479|
+ALUOP<0>       |FLAG<2>        |   11.722|
+ALUOP<0>       |FLAG<3>        |   12.688|
+ALUOP<0>       |RESULT<0>      |    9.383|
+ALUOP<0>       |RESULT<1>      |    9.240|
+ALUOP<0>       |RESULT<2>      |   13.527|
+ALUOP<0>       |RESULT<3>      |   11.871|
+ALUOP<1>       |FLAG<0>        |   12.153|
+ALUOP<1>       |FLAG<1>        |   13.372|
+ALUOP<1>       |FLAG<2>        |   11.615|
+ALUOP<1>       |FLAG<3>        |   12.581|
+ALUOP<1>       |RESULT<0>      |    9.514|
+ALUOP<1>       |RESULT<1>      |    9.683|
+ALUOP<1>       |RESULT<2>      |   13.420|
+ALUOP<1>       |RESULT<3>      |   11.764|
+ALUOP<2>       |FLAG<0>        |   11.820|
+ALUOP<2>       |FLAG<1>        |   12.147|
+ALUOP<2>       |FLAG<2>        |   11.620|
+ALUOP<2>       |FLAG<3>        |   12.248|
+ALUOP<2>       |RESULT<0>      |    9.267|
+ALUOP<2>       |RESULT<1>      |   10.252|
+ALUOP<2>       |RESULT<2>      |   12.195|
+ALUOP<2>       |RESULT<3>      |   11.769|
+ALUOP<3>       |FLAG<1>        |    9.929|
+ALUOP<3>       |FLAG<2>        |    9.444|
+ALUOP<3>       |RESULT<0>      |    9.286|
+ALUOP<3>       |RESULT<1>      |    9.356|
+ALUOP<3>       |RESULT<2>      |    8.375|
+ALUOP<3>       |RESULT<3>      |    9.593|
+B<0>           |FLAG<0>        |   11.602|
+B<0>           |FLAG<1>        |   12.230|
+B<0>           |FLAG<2>        |   11.064|
+B<0>           |FLAG<3>        |   12.030|
+B<0>           |RESULT<0>      |   10.252|
+B<0>           |RESULT<1>      |   11.057|
+B<0>           |RESULT<2>      |   12.278|
+B<0>           |RESULT<3>      |   11.213|
+B<1>           |FLAG<0>        |   12.537|
+B<1>           |FLAG<1>        |   12.822|
+B<1>           |FLAG<2>        |   12.337|
+B<1>           |FLAG<3>        |   12.965|
+B<1>           |RESULT<1>      |   10.712|
+B<1>           |RESULT<2>      |   12.325|
+B<1>           |RESULT<3>      |   12.486|
+B<2>           |FLAG<0>        |    9.704|
+B<2>           |FLAG<1>        |   10.849|
+B<2>           |FLAG<2>        |    9.820|
+B<2>           |FLAG<3>        |   10.132|
+B<2>           |RESULT<2>      |   10.897|
+B<2>           |RESULT<3>      |    9.969|
+B<3>           |FLAG<0>        |    9.336|
+B<3>           |FLAG<1>        |   10.575|
+B<3>           |FLAG<2>        |   10.090|
+B<3>           |FLAG<3>        |    9.764|
+B<3>           |RESULT<3>      |   10.239|
 ---------------+---------------+---------+
 
 
-Analysis completed Tue Sep 11 05:32:03 2018 
+Analysis completed Wed Sep 19 11:20:13 2018 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 375 MB
+Peak Memory Usage: 367 MB
 
 
 

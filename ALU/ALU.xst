@@ -4,7 +4,7 @@ run
 -ifn ALU.prj
 -ofn ALU
 -ofmt NGC
--p xc6slx4-2-csg225
+-p xc7a100t-2-csg324
 -top ALU
 -opt_mode Speed
 -opt_level 1
@@ -40,7 +40,7 @@ run
 -use_dsp48 Auto
 -iobuf YES
 -max_fanout 100000
--bufg 16
+-bufg 32
 -register_duplication YES
 -register_balancing No
 -optimize_primitives NO

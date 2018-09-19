@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2018-09-11T05:45:39</DateModified>
+  <DateModified>2018-09-19T11:08:18</DateModified>
   <ModuleName>ALU</ModuleName>
-  <SummaryTimeStamp>2018-09-04T06:24:33</SummaryTimeStamp>
-  <SavedFilePath>/home/ise/Documents/ALU/iseconfig/ALU.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>/home/ise/Documents/ALU/</ImplementationReportsDirectory>
-  <DateInitialized>2018-09-04T02:54:45</DateInitialized>
+  <SummaryTimeStamp>2018-09-19T11:07:34</SummaryTimeStamp>
+  <SavedFilePath>C:/Documents and Settings/Laboratorio/Escritorio/alu/ALU/iseconfig/ALU.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/Documents and Settings/Laboratorio/Escritorio/alu/ALU</ImplementationReportsDirectory>
+  <DateInitialized>2018-09-19T11:03:05</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
  <body>
