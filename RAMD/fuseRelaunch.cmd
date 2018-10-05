@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "/home/ise/ShareWindowsISE/RAMD/sim_isim_beh.exe" -prj "/home/ise/ShareWindowsISE/RAMD/sim_beh.prj" "work.sim" 

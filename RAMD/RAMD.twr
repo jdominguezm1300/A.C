@@ -1,0 +1,200 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/trce -intstyle ise -v 3 -s 2 -n
+3 -fastpaths -xml RAMD.twx RAMD.ncd -o RAMD.twr RAMD.pcf
+
+Design file:              RAMD.ncd
+Physical constraint file: RAMD.pcf
+Device,package,speed:     xc6slx16,csg324,C,-2 (PRODUCTION 1.23 2016-11-22)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Setup/Hold to clock clk
+------------+------------+------------+------------+------------+------------------+--------+
+            |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
+Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
+------------+------------+------------+------------+------------+------------------+--------+
+adr<0>      |    2.216(R)|      SLOW  |    0.127(R)|      SLOW  |clk_BUFGP         |   0.000|
+adr<1>      |    2.291(R)|      SLOW  |   -0.099(R)|      SLOW  |clk_BUFGP         |   0.000|
+adr<2>      |    2.527(R)|      SLOW  |    0.126(R)|      SLOW  |clk_BUFGP         |   0.000|
+adr<3>      |    2.524(R)|      SLOW  |   -0.201(R)|      FAST  |clk_BUFGP         |   0.000|
+adr<4>      |    2.485(R)|      SLOW  |   -0.180(R)|      SLOW  |clk_BUFGP         |   0.000|
+adr<5>      |    2.755(R)|      SLOW  |   -0.285(R)|      FAST  |clk_BUFGP         |   0.000|
+din<0>      |    1.107(R)|      SLOW  |   -0.054(R)|      SLOW  |clk_BUFGP         |   0.000|
+din<1>      |    1.345(R)|      SLOW  |    0.019(R)|      SLOW  |clk_BUFGP         |   0.000|
+din<2>      |    1.096(R)|      SLOW  |    0.216(R)|      SLOW  |clk_BUFGP         |   0.000|
+din<3>      |    1.207(R)|      SLOW  |    0.165(R)|      SLOW  |clk_BUFGP         |   0.000|
+din<4>      |    0.905(R)|      SLOW  |    0.138(R)|      SLOW  |clk_BUFGP         |   0.000|
+din<5>      |    1.281(R)|      SLOW  |    0.078(R)|      SLOW  |clk_BUFGP         |   0.000|
+din<6>      |    1.076(R)|      SLOW  |    0.236(R)|      SLOW  |clk_BUFGP         |   0.000|
+din<7>      |    1.205(R)|      SLOW  |    0.166(R)|      SLOW  |clk_BUFGP         |   0.000|
+din<8>      |    1.282(R)|      SLOW  |   -0.223(R)|      SLOW  |clk_BUFGP         |   0.000|
+din<9>      |    1.406(R)|      SLOW  |   -0.040(R)|      SLOW  |clk_BUFGP         |   0.000|
+din<10>     |    1.175(R)|      SLOW  |    0.134(R)|      SLOW  |clk_BUFGP         |   0.000|
+din<11>     |    1.384(R)|      SLOW  |   -0.014(R)|      SLOW  |clk_BUFGP         |   0.000|
+din<12>     |    1.112(R)|      SLOW  |   -0.059(R)|      SLOW  |clk_BUFGP         |   0.000|
+din<13>     |    1.399(R)|      SLOW  |   -0.035(R)|      SLOW  |clk_BUFGP         |   0.000|
+din<14>     |    1.426(R)|      SLOW  |   -0.107(R)|      SLOW  |clk_BUFGP         |   0.000|
+din<15>     |    1.366(R)|      SLOW  |    0.004(R)|      SLOW  |clk_BUFGP         |   0.000|
+wen         |    2.322(R)|      SLOW  |    0.033(R)|      SLOW  |clk_BUFGP         |   0.000|
+------------+------------+------------+------------+------------+------------------+--------+
+
+Clock clk to Pad
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+dout<0>     |         8.898(R)|      SLOW  |         3.572(R)|      FAST  |clk_BUFGP         |   0.000|
+dout<1>     |         9.050(R)|      SLOW  |         3.634(R)|      FAST  |clk_BUFGP         |   0.000|
+dout<2>     |         9.281(R)|      SLOW  |         3.718(R)|      FAST  |clk_BUFGP         |   0.000|
+dout<3>     |         9.060(R)|      SLOW  |         3.647(R)|      FAST  |clk_BUFGP         |   0.000|
+dout<4>     |         9.278(R)|      SLOW  |         3.790(R)|      FAST  |clk_BUFGP         |   0.000|
+dout<5>     |         9.430(R)|      SLOW  |         3.852(R)|      FAST  |clk_BUFGP         |   0.000|
+dout<6>     |         9.724(R)|      SLOW  |         4.014(R)|      FAST  |clk_BUFGP         |   0.000|
+dout<7>     |         9.780(R)|      SLOW  |         4.127(R)|      FAST  |clk_BUFGP         |   0.000|
+dout<8>     |         8.929(R)|      SLOW  |         3.603(R)|      FAST  |clk_BUFGP         |   0.000|
+dout<9>     |         9.160(R)|      SLOW  |         3.732(R)|      FAST  |clk_BUFGP         |   0.000|
+dout<10>    |         9.312(R)|      SLOW  |         3.749(R)|      FAST  |clk_BUFGP         |   0.000|
+dout<11>    |         9.092(R)|      SLOW  |         3.679(R)|      FAST  |clk_BUFGP         |   0.000|
+dout<12>    |         9.163(R)|      SLOW  |         3.736(R)|      FAST  |clk_BUFGP         |   0.000|
+dout<13>    |         9.315(R)|      SLOW  |         3.798(R)|      FAST  |clk_BUFGP         |   0.000|
+dout<14>    |         9.080(R)|      SLOW  |         3.579(R)|      FAST  |clk_BUFGP         |   0.000|
+dout<15>    |         8.860(R)|      SLOW  |         3.509(R)|      FAST  |clk_BUFGP         |   0.000|
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+adr<0>         |dout<0>        |    9.897|
+adr<0>         |dout<1>        |    9.989|
+adr<0>         |dout<2>        |   10.154|
+adr<0>         |dout<3>        |   10.264|
+adr<0>         |dout<4>        |   10.381|
+adr<0>         |dout<5>        |   10.356|
+adr<0>         |dout<6>        |   10.781|
+adr<0>         |dout<7>        |   10.806|
+adr<0>         |dout<8>        |    8.735|
+adr<0>         |dout<9>        |    8.586|
+adr<0>         |dout<10>       |    9.088|
+adr<0>         |dout<11>       |    8.820|
+adr<0>         |dout<12>       |    9.199|
+adr<0>         |dout<13>       |    8.971|
+adr<0>         |dout<14>       |    8.936|
+adr<0>         |dout<15>       |    8.819|
+adr<1>         |dout<0>        |   10.071|
+adr<1>         |dout<1>        |    9.931|
+adr<1>         |dout<2>        |    9.905|
+adr<1>         |dout<3>        |    9.767|
+adr<1>         |dout<4>        |   10.033|
+adr<1>         |dout<5>        |    9.893|
+adr<1>         |dout<6>        |   10.533|
+adr<1>         |dout<7>        |   10.497|
+adr<1>         |dout<8>        |    9.152|
+adr<1>         |dout<9>        |    9.091|
+adr<1>         |dout<10>       |    9.200|
+adr<1>         |dout<11>       |    9.063|
+adr<1>         |dout<12>       |    9.206|
+adr<1>         |dout<13>       |    9.066|
+adr<1>         |dout<14>       |    8.949|
+adr<1>         |dout<15>       |    8.812|
+adr<2>         |dout<0>        |    9.243|
+adr<2>         |dout<1>        |    9.387|
+adr<2>         |dout<2>        |    9.972|
+adr<2>         |dout<3>        |   10.268|
+adr<2>         |dout<4>        |   10.467|
+adr<2>         |dout<5>        |   10.611|
+adr<2>         |dout<6>        |   10.233|
+adr<2>         |dout<7>        |   10.337|
+adr<2>         |dout<8>        |    8.623|
+adr<2>         |dout<9>        |    8.791|
+adr<2>         |dout<10>       |    8.971|
+adr<2>         |dout<11>       |    8.784|
+adr<2>         |dout<12>       |    8.763|
+adr<2>         |dout<13>       |    8.907|
+adr<2>         |dout<14>       |    8.550|
+adr<2>         |dout<15>       |    8.298|
+adr<3>         |dout<0>        |   10.009|
+adr<3>         |dout<1>        |    9.973|
+adr<3>         |dout<2>        |    9.932|
+adr<3>         |dout<3>        |    9.805|
+adr<3>         |dout<4>        |    9.915|
+adr<3>         |dout<5>        |   10.118|
+adr<3>         |dout<6>        |   10.140|
+adr<3>         |dout<7>        |   10.290|
+adr<3>         |dout<8>        |    8.876|
+adr<3>         |dout<9>        |    9.326|
+adr<3>         |dout<10>       |    9.206|
+adr<3>         |dout<11>       |    9.080|
+adr<3>         |dout<12>       |    9.138|
+adr<3>         |dout<13>       |    9.286|
+adr<3>         |dout<14>       |    8.779|
+adr<3>         |dout<15>       |    8.653|
+adr<4>         |dout<0>        |    9.976|
+adr<4>         |dout<1>        |   10.322|
+adr<4>         |dout<2>        |   10.300|
+adr<4>         |dout<3>        |   10.209|
+adr<4>         |dout<4>        |   10.200|
+adr<4>         |dout<5>        |   10.506|
+adr<4>         |dout<6>        |   10.547|
+adr<4>         |dout<7>        |   10.733|
+adr<4>         |dout<8>        |    9.121|
+adr<4>         |dout<9>        |    9.096|
+adr<4>         |dout<10>       |    8.948|
+adr<4>         |dout<11>       |    8.858|
+adr<4>         |dout<12>       |    9.116|
+adr<4>         |dout<13>       |    8.758|
+adr<4>         |dout<14>       |    8.528|
+adr<4>         |dout<15>       |    8.438|
+adr<5>         |dout<0>        |   10.011|
+adr<5>         |dout<1>        |   10.049|
+adr<5>         |dout<2>        |   10.211|
+adr<5>         |dout<3>        |   10.084|
+adr<5>         |dout<4>        |   10.392|
+adr<5>         |dout<5>        |   10.248|
+adr<5>         |dout<6>        |   10.767|
+adr<5>         |dout<7>        |   10.646|
+adr<5>         |dout<8>        |    8.736|
+adr<5>         |dout<9>        |    9.029|
+adr<5>         |dout<10>       |    9.130|
+adr<5>         |dout<11>       |    9.004|
+adr<5>         |dout<12>       |    9.059|
+adr<5>         |dout<13>       |    9.120|
+adr<5>         |dout<14>       |    8.608|
+adr<5>         |dout<15>       |    8.779|
+---------------+---------------+---------+
+
+
+Analysis completed Fri Oct  5 01:47:00 2018 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 388 MB
+
+
+

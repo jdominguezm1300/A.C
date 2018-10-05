@@ -1,36 +1,10 @@
---------------------------------------------------------------------------------
--- Company: 
--- Engineer:
---
--- Create Date:   16:26:29 10/04/2018
--- Design Name:   
--- Module Name:   /home/ise/ShareWindowsISE/RAMD/sim.vhd
--- Project Name:  RAMD
--- Target Device:  
--- Tool versions:  
--- Description:   
--- 
--- VHDL Test Bench Created by ISE for module: RAMD
--- 
--- Dependencies:
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
---
--- Notes: 
--- This testbench has been automatically generated using types std_logic and
--- std_logic_vector for the ports of the unit under test.  Xilinx recommends
--- that these types always be used for the top-level I/O of a design in order
--- to guarantee that the testbench will bind correctly to the post-implementation 
--- simulation model.
---------------------------------------------------------------------------------
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 LIBRARY STD;
 USE STD.TEXTIO.ALL;
 USE ieee.std_logic_TEXTIO.all;
- 
+use ieee.std_logic_unsigned.all;
+use ieee.std_logic_arith.all;
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
 --USE ieee.numeric_std.ALL;
@@ -121,13 +95,22 @@ BEGIN
 			readline(arch_vec,linea_vec);
 			Hread(linea_vec,var_di);
 			din <= var_di;
-			Hread(linea_vec,var);
+			Hread(linea_vec,var_a);
+			adr <= var_a;
+			read(linea_vec,var_wd);
+			wen <= var_wd;
+			
+			wait until rising_edge(clk);
+			var_do := dout;
+			Hwrite(linea_res,var_di,right,2);
+			Hwrite(linea_res,var_a,right,4);
+			write(linea_res,var_wd,right,6);
+			Hwrite(linea_res,var_do,right,8);
+			-- insert stimulus here 
+			writeline(arch_res,linea_res);
 		end loop;
-      wait for clk_period*10;
-
-      -- insert stimulus here 
-
-      wait;
+      file_close(arch_vec);
+		file_close(arch_res);
    end process;
 
 END;

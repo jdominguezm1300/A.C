@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2018-10-04T16:13:17</DateModified>
+  <DateModified>2018-10-05T01:47:39</DateModified>
   <ModuleName>RAMD</ModuleName>
-  <SummaryTimeStamp>Unknown</SummaryTimeStamp>
+  <SummaryTimeStamp>2018-10-05T01:47:01</SummaryTimeStamp>
   <SavedFilePath>/home/ise/ShareWindowsISE/RAMD/iseconfig/RAMD.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>/home/ise/ShareWindowsISE/RAMD</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>/home/ise/ShareWindowsISE/RAMD/</ImplementationReportsDirectory>
   <DateInitialized>2018-10-04T16:13:16</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

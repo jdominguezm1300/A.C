@@ -1,6 +1,6 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
+use ieee.std_logic_unsigned.all;
 entity RAMD is
 	 generic(
 			bdata : integer := 16;
@@ -19,11 +19,12 @@ type memoria is array(0 to 2**baddr-1) of std_logic_vector(dout'range);
 signal ramdist : memoria;
 begin
 	prog : process (clk)
+	begin
 	--	if(clr = '1')then
 	--		ramdist <= (others => (others => '0'));
 		if(rising_edge(clk))then
 			if(wen = '1')then
-				ramdist(adr) <= din;
+				ramdist(conv_integer(adr)) <= din;
 			end if;
 		end if;
 	end process prog;

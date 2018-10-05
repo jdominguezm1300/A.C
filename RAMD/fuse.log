@@ -1,0 +1,10 @@
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/ise/ShareWindowsISE/RAMD/sim_isim_beh.exe -prj /home/ise/ShareWindowsISE/RAMD/sim_beh.prj work.sim 
+ISim P.20160913 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 1
+Turning on mult-threading, number of parallel sub-compilation jobs: 0 
+Determining compilation order of HDL files
+Parsing VHDL file "/home/ise/ShareWindowsISE/RAMD/RAMD.vhd" into library work
+Parsing VHDL file "/home/ise/ShareWindowsISE/RAMD/sim.vhd" into library work
+Starting static elaboration
+ERROR:HDLCompiler:410 - "/home/ise/ShareWindowsISE/RAMD/sim.vhd" Line 99: Expression has 7 elements ; expected 6
+ERROR:Simulator:777 - Static elaboration of top level VHDL design unit sim in library work failed
